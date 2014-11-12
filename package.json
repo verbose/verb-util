@@ -1,7 +1,7 @@
 {
   "name": "verb-util",
-  "description": "Utilities for verb, and verb helpers, plugins, or other extensions.",
-  "version": "0.1.1",
+  "description": "Utilities for verb and verb helpers, plugins, and other extensions.",
+  "version": "0.1.2",
   "homepage": "https://github.com/jonschlinkert/verb-util",
   "author": {
     "name": "Jon Schlinkert",
@@ -29,17 +29,22 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "^4.3.0"
+    "should": "^4.3.0",
+    "verb": "^0.3.3"
   },
   "keywords": [
-    "util",
-    "utils",
-    "utility",
-    "utilities",
-    "helper",
     "extension",
-    "verb",
+    "helper",
+    "helpers",
+    "middlware",
     "plugin",
+    "plugins",
+    "transform",
+    "util",
+    "utilities",
+    "utility",
+    "utils",
+    "verb",
     "verbutil"
   ],
   "dependencies": {
