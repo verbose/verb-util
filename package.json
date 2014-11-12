@@ -29,8 +29,7 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "^4.3.0",
-    "verb": "^0.3.3"
+    "should": "^4.3.0"
   },
   "keywords": [
     "extension",

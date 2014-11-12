@@ -8,8 +8,8 @@ var escape = require('./lib/middleware/escape');
 verb.data('package.json');
 verb.data({foo: 'bar'});
 
-verb.before(/\.*/, escape.before(verb));
-verb.after(/\.*/, escape.after(verb));
+verb(/\.*/).before(escape.before(verb));
+verb(/\.*/).after(escape.before(verb));
 
 verb.task('tests', function() {
   verb.src('test/fixtures/*.md')
