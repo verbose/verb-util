@@ -1,24 +1,25 @@
 'use strict';
 
 var verb = require('verb');
+var dest = require('./lib/dest');
+
 var escape = require('./lib/middleware/escape');
-
-// temporary, need to get tests setup
-
-verb.data('package.json');
+verb.route(/\.*/).before(escape.before(verb));
+verb.route(/\.*/).after(escape.after(verb));
 verb.data({foo: 'bar'});
 
-verb(/\.*/).before(escape.before(verb));
-verb(/\.*/).after(escape.before(verb));
-
-verb.task('tests', function() {
-  verb.src('test/fixtures/*.md')
+verb.task('default', function() {
+  verb.src('test/fixtures/path*.md')
+    .pipe(dest('foo.blah'))
     .pipe(verb.dest('./test/actual'));
+    // .pipe(verb.dest(function(fp) {
+    //   return 'test/actual/foo';
+    // }));
 });
 
-verb.task('readme', function() {
-  verb.src('.verb.md')
-    .pipe(verb.dest('./'));
-});
+// verb.task('readme', function() {
+//   verb.src('.verb.md')
+//     .pipe(verb.dest('./'));
+// });
 
-verb.task('default', ['tests', 'readme']);
+// verb.task('default', ['tests', 'readme']);

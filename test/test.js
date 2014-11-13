@@ -9,7 +9,7 @@
 
 var assert = require('assert');
 var should = require('should');
-var utils = require('./');
+var utils = require('../');
 
 describe('utils', function () {
   describe('.headings()', function () {
